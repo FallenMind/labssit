@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторная работа 4</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="JavaScript/image.js"></script>
+    <script src="JavaScript/path.js"></script>
+    <script src="JavaScript/main.js" defer></script>
+</head>
+
+<body>
+<form id="setting">
+
+    <div id="horiz">
+
+        <!-- Положение -->
+        <div id="positionBlock">
+            <p>
+                Положение<br>
+
+                x:
+                <input type="number" id="cx" value="300">
+                <span class="anim-field">после:</span>
+                <input type="number" id="cx_finish" class="anim-field" value="450"><br>
+
+                y:
+                <input type="number" id="cy" value="300">
+                <span class="anim-field">после:</span>
+                <input type="number" id="cy_finish" class="anim-field" value="300">
+            </p>
+        </div>
+
+        <!-- Путь -->
+        <div id="pathBlock" style="display: none;">
+            <p>
+                Пути перемещения<br>
+                <select id="pathType">
+                    <option value="0">Буквой «Г»</option>
+                    <option value="1">По кругу</option>
+                </select>
+            </p>
+        </div>
+
+        <!-- Масштаб -->
+        <p id="scaleBlock">
+            Масштаб<br>
+
+            x:
+            <input type="number" id="sx" value="1" step="0.1">
+            <span class="anim-field">после:</span>
+            <input type="number" id="sx_finish" class="anim-field" value="1.5" step="0.1"><br>
+
+            y:
+            <input type="number" id="sy" value="1" step="0.1">
+            <span class="anim-field">после:</span>
+            <input type="number" id="sy_finish" class="anim-field" value="1.5" step="0.1">
+        </p>
+
+        <!-- Поворот -->
+        <p id="rotateBlock">
+            Поворот<br>
+
+            угол:
+            <input type="number" id="angle" value="0">
+            <span class="anim-field">после:</span>
+            <input type="number" id="angle_finish" class="anim-field" value="45">
+        </p>
+
+    </div>
+
+    <p id="drawBlock">
+        <input type="button" id="drawBtn" value="Нарисовать">
+    </p>
+
+    <p>
+        <input type="button" id="clearBtn" value="Очистить">
+    </p>
+
+    <!-- Управление -->
+    <p id="toggleBlock">
+        <label class="fullLabel">
+            <input type="checkbox" id="animationToggle">
+            Включить анимацию?
+        </label>
+
+        <select id="animationType" class="anim-field">
+            <option value="linear">linear</option>
+            <option value="elastic">elastic</option>
+            <option value="bounce">bounce</option>
+        </select>
+
+        <label class="fullLabel" id="pathToggleLabel" style="display:none;">
+            <input type="checkbox" id="pathToggle">
+            По пути?
+        </label>
+    </p>
+
+    <p id="animateButtonBlock" class="anim-field">
+        <input type="button" id="animateBtn" value="Анимировать">
+    </p>
+
+</form>
+
+<svg width="600" height="600"></svg>
+
+</body>
+</html>
