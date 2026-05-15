@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Таксопарк "Быстрый" — Главная</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body id="top" class="bg-white">
+  <div class="container py-3">
+
+    <nav class="navbar navbar-expand-lg bg-white border rounded-3 px-3">
+
+      <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <form class="d-flex flex-nowrap align-items-center ms-auto order-2 order-lg-3 my-2 my-lg-0"
+            role="search" action="#" method="get">
+        <input class="form-control form-control-sm w-auto me-2"
+               type="search" name="q" placeholder="Найти" aria-label="Найти">
+        <button class="btn btn-primary btn-sm" type="submit">Поиск</button>
+      </form>
+
+      <div class="collapse navbar-collapse order-3 order-lg-2" id="nav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="car.html">Автомобиль дня</a></li>
+          <li class="nav-item"><a class="nav-link" href="data.html">Данные автопарка</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Услуги
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#corp">Корпоративным клиентам</a></li>
+              <li><a class="dropdown-item" href="#vip">Бизнес-класс</a></li>
+              <li><a class="dropdown-item" href="#eco">Эконом</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="mailto:info@taxi.example">Связаться</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr class="my-4">
+
+    <section id="gallery" class="mb-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"
+                      aria-current="true" aria-label="Слайд 1"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3" aria-label="Слайд 4"></button>
+            </div>
+
+            <div class="carousel-inner border rounded-3 overflow-hidden">
+              <div class="carousel-item active">
+                <a href="car.html" class="d-block text-decoration-none">
+                  <div class="ratio ratio-16x9">
+                    <img src="prius.jpg" class="w-100 h-100 object-fit-cover" alt="Toyota Prius">
+                  </div>
+                </a>
+              </div>
+
+              <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                  <img src="model3.jpg" class="w-100 h-100 object-fit-cover" alt="Tesla Model 3">
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                  <img src="octavia.jpg" class="w-100 h-100 object-fit-cover" alt="Skoda Octavia">
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                  <img src="passat.jpg" class="w-100 h-100 object-fit-cover" alt="VW Passat">
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Назад</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Вперёд</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4">
+    </section>
+
+    <section class="row g-4 align-items-start">
+      <div class="col-12 col-lg-9">
+
+        <div class="row g-3 text-center">
+          <div class="col-md">
+            <div class="ratio ratio-1x1 w-75 mx-auto rounded-circle">
+              <img src="prius.jpg" class="w-100 h-100 object-fit-cover" alt="Toyota Prius">
+            </div>
+            <div class="fw-bold mt-2">Автомобиль дня</div>
+            <div class="small text-muted">Toyota Prius</div>
+            <a class="btn btn-primary btn-sm mt-2" href="car.html">Подробнее »</a>
+          </div>
+
+          <div class="col-md">
+            <div class="ratio ratio-1x1 w-75s mx-auto rounded-circle">
+              <img src="moretaxis.webp" class="w-100 h-100 object-fit-cover" alt="Корпоративные поездки">
+            </div>
+            <div class="fw-bold mt-2">Услуги</div>
+            <div class="small text-muted">Корпоративным</div>
+            <a class="btn btn-primary btn-sm mt-2" href="#corp">Подробнее »</a>
+          </div>
+
+          <div class="col-md">
+            <div class="ratio ratio-1x1 w-75 mx-auto rounded-circle">
+              <img src="krutoe.jpg" class="w-100 h-100 object-fit-cover" alt="Бизнес-класс">
+            </div>
+            <div class="fw-bold mt-2">Услуги</div>
+            <div class="small text-muted">Бизнес-класс</div>
+            <a class="btn btn-primary btn-sm mt-2" href="#vip">Подробнее »</a>
+          </div>
+
+          <div class="col-md">
+            <div class="ratio ratio-1x1 w-75 mx-auto rounded-circle">
+              <img src="economy.png" class="w-100 h-100 object-fit-cover" alt="Эконом">
+            </div>
+            <div class="fw-bold mt-2">Услуги</div>
+            <div class="small text-muted">Эконом</div>
+            <a class="btn btn-primary btn-sm mt-2" href="#eco">Подробнее »</a>
+          </div>
+
+          <div class="col-md">
+            <div class="ratio ratio-1x1 w-75 mx-auto rounded-circle overflow-hidden">
+              <img src="octavia.jpg" class="w-100 h-100 object-fit-cover" alt="Skoda Octavia">
+            </div>
+            <div class="fw-bold mt-2">Автопарк</div>
+            <div class="small text-muted">Смотреть данные</div>
+            <a class="btn btn-primary btn-sm mt-2" href="data.html">Подробнее »</a>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+          <div class="col-12 col-md-6 col-lg-4" id="corp">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="h5">Корпоративным клиентам</h2>
+                <p class="mb-2">
+                  Мы предлагаем безналичный расчет, ежемесячную отчетность и фиксированные тарифы для компаний.
+                </p>
+                <ul class="mb-2">
+                  <li>Личный менеджер</li>
+                  <li>Приоритетная подача</li>
+                  <li>Гарантированная категория авто</li>
+                </ul>
+                <p class="mb-0">
+                  Оставьте заявку по <a href="mailto:corp@taxi.example">электронной почте</a>
+                  или свяжитесь по телефону:
+                  <a href="tel:+79991234567">+7 (999) 123-45-67</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-5">
+            <a href="#vip" class="d-block text-decoration-none h-100">
+              <div class="card h-100 overflow-hidden d-flex">
+                <div class="ratio ratio-4x3 mt-auto">
+                  <img src="krutoe.jpg" class="w-100 h-100 object-fit-cover" alt="Бизнес-класс">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3" id="vip">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <h2 class="h5">Бизнес-класс</h2>
+                <p class="mb-2">Для важных встреч и перелетов — новые автомобили бизнес-класса с опытными водителями.</p>
+                <ol class="mb-3">
+                  <li>Вода и зарядки в салоне</li>
+                  <li>Встреча с табличкой в аэропорту</li>
+                  <li>Тишина и комфорт</li>
+                </ol>
+                <a class="mt-auto text-decoration-none text-warning fw-semibold" href="#vip">Подробнее »</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="col-12 col-lg-3">
+
+        <!-- ПРАВЫЙ БЛОК 1 -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row g-3 align-items-stretch">
+              <div class="col-7 d-flex flex-column">
+                <h2 class="h6 mb-2">Тарифы и подача</h2>
+      
+                <div class="border rounded-2 p-2 mb-2">
+                  <p class="small mb-0">
+                    Эконом — на каждый день, Комфорт — для семьи, Бизнес — для встреч.
+                    Средняя подача по городу: 5–10 минут.
+                  </p>
+                </div>
+      
+                <a class="text-decoration-none text-warning fw-semibold align-self-start mt-auto" href="data.html">
+                  Подробнее »
+                </a>
+              </div>
+      
+              <div class="col-5">
+                <a href="pruis2018_1.jpg" class="d-block text-decoration-none h-100">
+                  <div class="border rounded-2 overflow-hidden h-100">
+                    <img src="pruis2018_1.jpg" class="w-100 h-100 object-fit-cover" alt="Автопарк такси">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- ПРАВЫЙ БЛОК 2 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="row g-3 align-items-stretch">
+              <div class="col-7 d-flex flex-column">
+                <h2 class="h6 mb-2">Контакты и поддержка</h2>
+      
+                <div class="border rounded-2 p-2 mb-2">
+                  <p class="small mb-0">
+                    Поддержка 24/7: <a href="tel:+79991234567" class="text-decoration-none">+7 (999) 123-45-67</a><br>
+                    Почта: <a href="mailto:info@taxi.example" class="text-decoration-none">info@taxi.example</a>
+                  </p>
+                </div>
+      
+                <a class="text-decoration-none text-warning fw-semibold align-self-start mt-auto" href="mailto:info@taxi.example">
+                  Подробнее »
+                </a>
+              </div>
+      
+              <div class="col-5">
+                <a href="octavia.jpg" class="d-block text-decoration-none h-100">
+                  <div class="border rounded-2 overflow-hidden h-100">
+                    <img src="octavia.jpg" class="w-100 h-100 object-fit-cover" alt="Связаться с нами">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </aside>
+      
+    </section>
+
+    <footer class="mt-4 py-3 text-center bg-light">
+      <p class="mb-1">
+        &copy; 2025 Таксопарк "Быстрый". <strong>Б9123-09.03.04/4 Дмитриенко В.Ю.</strong>
+      </p>
+      <p class="mb-0"><a href="#top">Наверх</a></p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

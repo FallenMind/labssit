@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td {
+  border: 1px solid #333;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+thead td {
+  background-color: #2f80ed;
+  color: white;
+  font-weight: bold;
+}
+
+
+.show {
+  display: table-row;
+}
+
+.hide {
+  display: none;
+}
+
+.pagination {
+  margin-top: 15px;
+}
+
+.pagination span {
+  margin: 0 8px;
+  padding: 6px 10px;
+  border: 1px solid #2f80ed;
+  cursor: pointer;
+}
+
+.active-page {
+  background-color: #2f80ed;
+  color: white;
+  font-weight: bold;
+}
+
+svg {
+    width: 800px;
+    height: 400px;
+}
+
+svg path, line {
+    fill: none;
+    stroke: black;
+    width: 1px;
+}
+ 
+svg text {
+    font: 8px Verdana;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-input {
+    outline: 2px solid red;
+}

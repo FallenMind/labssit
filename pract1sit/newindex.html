@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Макет страницы (блочная верстка)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Times New Roman", serif;
+            background: #ffffff;
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 20px;
+        }
+
+        header {
+            padding: 10px 0;
+        }
+        .top-panel {
+            border: 1px solid #dcdcdc;
+            padding: 8px 10px;
+            overflow: hidden;
+        }
+
+        .menu-wrapper {
+            float: left;
+            width: 75%;
+            text-align: center;
+        }
+        .menu {
+            display: inline-block;
+        }
+        .menu a {
+            display: inline-block;
+            padding: 5px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            border-radius: 8px;
+            color: #000;
+            background: none;
+            border: none;
+            margin: 0 5px;
+        }
+        .menu a.active {
+            background: #2c7edb;
+            color: #fff;
+        }
+
+        .search-form {
+            float: right;
+            width: 20%;
+            text-align: right;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+        .search-form input[type="text"] {
+            width: 170px;
+            height: 26px;
+            padding: 3px 6px;
+            border: 1px solid #b0b0b0;
+            border-radius: 8px;
+        }
+        .search-form input[type="submit"] {
+            padding: 3px 12px;
+            height: 26px;
+            border-radius: 8px;
+            border: none;
+            background: #2c7edb;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .image-grid {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .image-grid::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .grid-col {
+            float: left;
+            width: 33.333%;
+        }
+
+        .img-cell {
+            display: block;
+            text-decoration: none;
+            border: none;
+            height: 180px;
+        }
+        .img-short {
+            height: 90px;
+        }
+        .grid-spacer {
+            height: 90px;
+        }
+        .img-cell img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-block {
+            margin-top: 30px;
+            font-size: 0;
+        }
+
+        .content-left {
+            display: inline-block;
+            width: 75%;
+            vertical-align: top;
+            font-size: 16px;
+        }
+        .content-right {
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+            font-size: 16px;
+            border-left: 2px solid #c7a86c;
+            padding-left: 20px;
+        }
+
+        .circle-row {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 0;
+        }
+        .circle-card {
+            display: inline-block;
+            width: 17%;
+            margin: 0 1%;
+            text-align: center;
+            font-size: 14px;
+        }
+        .circle-img {
+            width: 80%;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            border: 1px solid #c0c0c0;
+            display: block;
+            margin: 0 auto 5px;
+            overflow: hidden;
+        }
+        .circle-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .circle-card .title {
+            font-weight: bold;
+        }
+        .btn-more {
+            margin-top: 4px;
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 13px;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #0059b3;
+            background: #2c7edb;
+            color: #fff;
+        }
+
+        .triple-row {
+            margin-top: 20px;
+            font-size: 0;
+        }
+        .triple-row > * {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+        }
+        .triple-row .text-lines {
+            width: 28%;
+            margin-right: 2%;
+            border: 1px solid #e0e0e0;
+            height: 260px;
+            padding: 10px 15px;
+            box-sizing: border-box;
+        }
+        .triple-row .middle-img {
+            width: 40%;
+            margin-right: 2%;
+            height: 260px;
+        }
+        .triple-row .text-lines:last-child {
+            margin-right: 0;
+        }
+        .text-lines p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .middle-img a {
+            display: block;
+            height: 100%;
+            border: 1px solid #c0c0c0;
+        }
+        .middle-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .right-item {
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .right-text {
+            float: left;
+            width: 55%;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+        .right-pic {
+            float: left;
+            width: 45%;
+            box-sizing: border-box;
+            border: 1px solid #c0c0c0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .right-pic a {
+            display: block;
+            height: 200px;
+        }
+        .right-item:first-child .right-pic a {
+            height: 140px;
+        }
+
+        .right-pic img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .right-caption {
+            font-weight: bold;
+            margin-bottom: 3px;
+            font-size: 15px;
+        }
+        .right-lines {
+            border: 1px solid #e0e0e0;
+            margin-bottom: 4px;
+            padding: 6px 10px;
+            box-sizing: border-box;
+        }
+        .right-lines p {
+            font-size: 13px;
+            line-height: 1.3;
+        }
+        .right-more {
+            font-size: 14px;
+        }
+        .right-more a {
+            text-decoration: none;
+            color: #c18b3b;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <header>
+        <div class="top-panel">
+
+            <div class="menu-wrapper">
+                <nav class="menu">
+                    <a href="#" class="active">Меню 1</a>
+                    <a href="#">Меню 2</a>
+                    <a href="#">Меню 3</a>
+                    <a href="#">Меню 4</a>
+                </nav>
+            </div>
+
+            <form class="search-form" action="#" method="get">
+                <input type="text" name="q" placeholder="Найти">
+                <input type="submit" value="Поиск">
+            </form>
+        </div>
+    </header>
+
+    <section class="image-grid">
+        <div class="grid-col col1">
+            <a href="krutoe.jpg" class="img-cell img1">
+                <img src="krutoe.jpg" alt="krutoe">
+            </a>
+            <a href="prius.jpg" class="img-cell img5">
+                <img src="prius.jpg" alt="prius">
+            </a>
+        </div>
+
+        <div class="grid-col col2">
+            <a href="model3.jpg" class="img-cell img2 img-short">
+                <img src="model3.jpg" alt="model 3">
+            </a>
+            <a href="passat.jpg" class="img-cell img4">
+                <img src="passat.jpg" alt="passat">
+            </a>
+            <div class="grid-spacer"></div>
+        </div>
+
+        <div class="grid-col col3">
+            <a href="octavia.jpg" class="img-cell img3">
+                <img src="octavia.jpg" alt="octavia">
+            </a>
+            <a href="pruis2018_1.jpg" class="img-cell img6">
+                <img src="pruis2018_1.jpg" alt="prius 2018">
+            </a>
+        </div>
+    </section>
+
+    <section class="content-block">
+
+        <div class="content-left">
+
+            <div class="circle-row">
+                <div class="circle-card">
+                    <a href="prius.jpg" class="circle-img c1">
+                        <img src="prius.jpg" alt="prius">
+                    </a>
+                    <div class="title">Lorem ipsum</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <a href="#" class="btn-more">Подробнее&raquo;</a>
+                </div>
+
+                <div class="circle-card">
+                    <a href="krutoe.jpg" class="circle-img c2">
+                        <img src="krutoe.jpg" alt="krutoe">
+                    </a>
+                    <div class="title">Lorem ipsum</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <a href="#" class="btn-more">Подробнее&raquo;</a>
+                </div>
+
+                <div class="circle-card">
+                    <a href="model3.jpg" class="circle-img c3">
+                        <img src="model3.jpg" alt="model 3">
+                    </a>
+                    <div class="title">Lorem ipsum</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <a href="#" class="btn-more">Подробнее&raquo;</a>
+                </div>
+
+                <div class="circle-card">
+                    <a href="passat.jpg" class="circle-img c4">
+                        <img src="passat.jpg" alt="passat">
+                    </a>
+                    <div class="title">Lorem ipsum</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <a href="#" class="btn-more">Подробнее&raquo;</a>
+                </div>
+
+                <div class="circle-card">
+                    <a href="octavia.jpg" class="circle-img c5">
+                        <img src="octavia.jpg" alt="octavia">
+                    </a>
+                    <div class="title">Lorem ipsum</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <a href="#" class="btn-more">Подробнее&raquo;</a>
+                </div>
+            </div>
+
+            <div class="triple-row">
+                <div class="text-lines">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Proin commodo urna at nibh viverра, non sagittis purus convallis.
+                        Suspendisse potenti.
+                    </p>
+                </div>
+
+                <div class="middle-img">
+                    <a href="model3.jpg">
+                        <img src="model3.jpg" alt="model 3">
+                    </a>
+                </div>
+
+                <div class="text-lines">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <div class="right-more"><a href="#">Подробнее&raquo;</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <aside class="content-right">
+            <div class="right-item">
+                <div class="right-text">
+                    <div class="right-caption">Lorem ipsum</div>
+                    <div class="right-lines">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Integer nec odio.
+                        </p>
+                    </div>
+                    <div class="right-more"><a href="#">Подробнее&raquo;</a></div>
+                </div>
+                <div class="right-pic">
+                    <a href="pruis2018_1.jpg">
+                        <img src="pruis2018_1.jpg" alt="prius 2018">
+                    </a>
+                </div>
+            </div>
+
+            <div class="right-item">
+                <div class="right-text">
+                    <div class="right-caption">Lorem ipsum</div>
+                    <div class="right-lines">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    <div class="right-more"><a href="#">Подробнее&raquo;</a></div>
+                </div>
+                <div class="right-pic">
+                    <a href="octavia.jpg">
+                        <img src="octavia.jpg" alt="octavia">
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background-color: white;
+    color: black;
+}
+
+.controls {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 10px 15px 20px 15px;
+}
+
+#filter {
+    width: 280px;  
+    padding: 10px 15px;
+}
+
+#sort {
+    width: 260px;
+    padding: 10px 0;
+    margin-top: 95px;
+}
+
+#filter h2,
+#sort h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+#filter p,
+#sort p {
+    margin: 12px 0;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+    vertical-align: middle;
+}
+
+input[type="text"] {
+    width: 170px;
+}
+
+input[type="number"] {
+    width: 63px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 2px 4px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+select {
+    width: 95px;
+}
+
+input[type="button"] {
+    padding: 3px 8px;
+    margin-right: 6px;
+    border: 1px solid #999;
+    background-color: #efefef;
+    cursor: pointer;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 780px;
+    margin-left: 0;
+    border: 1px solid #cfcfcf;
+    font-size: 18px;
+}
+
+th,
+td {
+    border: 1px solid #cfcfcf;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e6e6e6;
+    text-align: center;
+    font-weight: bold;
+}

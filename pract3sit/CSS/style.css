@@ -1,0 +1,13 @@
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-input {
+    outline: 2px solid red;
+}

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Таксопарк "Быстрый" — Данные автопарка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="JavaScript/data.js"></script>
+  <script defer src="JavaScript/table.js"></script>
+  <script defer src="JavaScript/filter.js"></script>
+  <script defer src="JavaScript/sort.js"></script>
+  <script defer src="JavaScript/main.js"></script>
+</head>
+
+<body id="top">
+
+  <header>
+    <h1 align="center">Данные автопарка</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="car.html">Автомобиль дня</a></li>
+        <li><a href="data.html">Данные автопарка</a></li>
+        <li><a href="mailto:info@taxi.example">Связаться</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+  </header>
+
+  <section>
+    <h2>Настройки отображения</h2>
+
+    <form action="#" method="get" id="fleet-controls-form">
+
+      <fieldset id="sort-controls">
+        <legend>Сортировка</legend>
+
+        <div>
+          <label for="sort1">Поле 1:</label>
+          <select name="sort1" id="sort1">
+            <option value="">— не выбрано —</option>
+            <option value="id">ID</option>
+            <option value="model">Модель</option>
+            <option value="year">Год</option>
+            <option value="mileage">Пробег</option>
+            <option value="status">Статус</option>
+            <option value="driver">Водитель</option>
+            <option value="rating">Рейтинг</option>
+            <option value="trips">Поездки</option>
+            <option value="fuel">Топливо</option>
+            <option value="class">Класс</option>
+            <option value="plate">Номер</option>
+            <option value="service">Последнее ТО</option>
+          </select>
+
+          <label>
+            <input type="radio" id="order1Asc" name="order1" value="asc">
+            ↑ по возрастанию
+          </label>
+
+          <label>
+            <input type="radio" id="order1Desc" name="order1" value="desc">
+            ↓ по убыванию
+          </label>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="sort2">Поле 2:</label>
+          <select name="sort2" id="sort2">
+            <option value="">— не выбрано —</option>
+            <option value="id">ID</option>
+            <option value="model">Модель</option>
+            <option value="year">Год</option>
+            <option value="mileage">Пробег</option>
+            <option value="status">Статус</option>
+            <option value="driver">Водитель</option>
+            <option value="rating">Рейтинг</option>
+            <option value="trips">Поездки</option>
+            <option value="fuel">Топливо</option>
+            <option value="class">Класс</option>
+            <option value="plate">Номер</option>
+            <option value="service">Последнее ТО</option>
+          </select>
+
+          <label>
+            <input type="radio" id="order2Asc" name="order2" value="asc" checked>
+            ↑ по возрастанию
+          </label>
+
+          <label>
+            <input type="radio" id="order2Desc" name="order2" value="desc">
+            ↓ по убыванию
+          </label>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="sort3">Поле 3:</label>
+          <select name="sort3" id="sort3">
+            <option value="">— не выбрано —</option>
+            <option value="id">ID</option>
+            <option value="model">Модель</option>
+            <option value="year">Год</option>
+            <option value="mileage">Пробег</option>
+            <option value="status">Статус</option>
+            <option value="driver">Водитель</option>
+            <option value="rating">Рейтинг</option>
+            <option value="trips">Поездки</option>
+            <option value="fuel">Топливо</option>
+            <option value="class">Класс</option>
+            <option value="plate">Номер</option>
+            <option value="service">Последнее ТО</option>
+          </select>
+
+          <label>
+            <input type="radio" id="order3Asc" name="order3" value="asc" checked>
+            ↑ по возрастанию
+          </label>
+
+          <label>
+            <input type="radio" id="order3Desc" name="order3" value="desc">
+            ↓ по убыванию
+          </label>
+        </div>
+
+        <br>
+
+        <button type="button" id="sort-button">
+          Применить сортировку
+        </button>
+
+        <button type="button" id="reset-sort-button">
+          Сбросить сортировку
+        </button>
+      </fieldset>
+
+      <br>
+
+      <fieldset id="filter-controls">
+        <legend>Фильтры</legend>
+
+        <div>
+          <label for="id_min">ID от:</label>
+          <input type="number" id="id_min" name="id_min" min="1" step="1">
+
+          <label for="id_max">до:</label>
+          <input type="number" id="id_max" name="id_max" min="1" step="1">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="model_contains">Модель содержит:</label>
+          <input type="text" id="model_contains" name="model_contains" placeholder="например, Toyota">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="year_min">Год от:</label>
+          <input type="number" id="year_min" name="year_min" min="2010" max="2025" step="1">
+
+          <label for="year_max">до:</label>
+          <input type="number" id="year_max" name="year_max" min="2010" max="2025" step="1">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="mileage_min">Пробег от, км:</label>
+          <input type="number" id="mileage_min" name="mileage_min" min="0" step="1">
+
+          <label for="mileage_max">до:</label>
+          <input type="number" id="mileage_max" name="mileage_max" min="0" step="1">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="status">Статус:</label>
+          <select name="status" id="status">
+            <option value="">Любой</option>
+            <option value="Свободен">Свободен</option>
+            <option value="На заказе">На заказе</option>
+            <option value="На обслуживании">На обслуживании</option>
+          </select>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="driver_contains">Водитель содержит:</label>
+          <input type="text" id="driver_contains" name="driver_contains" placeholder="например, Иванов">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="rating_min">Рейтинг от:</label>
+          <input type="number" id="rating_min" name="rating_min" min="0" max="5" step="0.1">
+
+          <label for="rating_max">до:</label>
+          <input type="number" id="rating_max" name="rating_max" min="0" max="5" step="0.1">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="trips_min">Поездки от:</label>
+          <input type="number" id="trips_min" name="trips_min" min="0" step="1">
+
+          <label for="trips_max">до:</label>
+          <input type="number" id="trips_max" name="trips_max" min="0" step="1">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="fuel">Тип топлива:</label>
+          <select id="fuel" name="fuel">
+            <option value="">Любой</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Electric">Electric</option>
+          </select>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="class">Класс:</label>
+          <select id="class" name="class">
+            <option value="">Любой</option>
+            <option value="Economy">Economy</option>
+            <option value="Standard">Standard</option>
+            <option value="Comfort">Comfort</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="plate_contains">Номер содержит:</label>
+          <input type="text" id="plate_contains" name="plate_contains" placeholder="например, B860">
+        </div>
+
+        <br>
+
+        <div>
+          <label for="service_from">Последнее ТО с:</label>
+          <input type="date" id="service_from" name="service_from">
+
+          <label for="service_to">по:</label>
+          <input type="date" id="service_to" name="service_to">
+        </div>
+
+        <br>
+
+        <button type="button" id="filter-button">
+          Отфильтровать
+        </button>
+
+        <button type="button" id="reset-filters-button">
+          Сбросить
+        </button>
+      </fieldset>
+
+      <br>
+
+      <fieldset id="chart-controls">
+        <legend>Настройки графика</legend>
+
+        <label for="x">Ось X:</label>
+
+        <select name="x" id="x">
+          <option value="model">Модель</option>
+          <option value="status">Статус</option>
+          <option value="driver">Водитель</option>
+          <option value="plate">Номер</option>
+          <option value="fuel">Тип топлива</option>
+          <option value="class">Класс</option>
+        </select>
+
+        <br><br>
+
+        <label>Ось Y (можно несколько):</label>
+
+        <div id="y-options">
+          <label><input type="checkbox" name="y[]" value="id"> ID</label><br>
+          <label><input type="checkbox" name="y[]" value="year"> Год</label><br>
+          <label><input type="checkbox" name="y[]" value="mileage"> Пробег</label><br>
+          <label><input type="checkbox" name="y[]" value="rating"> Рейтинг</label><br>
+          <label><input type="checkbox" name="y[]" value="trips"> Поездки</label><br>
+          <label><input type="checkbox" name="y[]" value="service"> Последнее ТО</label>
+        </div>
+
+        <br>
+
+        <button type="button" id="chart-button">
+          Построить график
+        </button>
+      </fieldset>
+
+    </form>
+  </section>
+
+  <section>
+    <h2>Таблица автопарка</h2>
+
+    <div id="fleet-table-placeholder">
+      <table border="1" cellpadding="6" width="100%" id="fleet-table"></table>
+    </div>
+  </section>
+
+  <section>
+    <h2>График</h2>
+
+    <div id="fleet-chart-placeholder">
+      <!-- JS вставляет график сюда -->
+    </div>
+  </section>
+
+  <p>
+    <a href="index.html">Вернуться на главную</a>
+  </p>
+
+  <footer style="background-color:#f0f0f0" align="center">
+    <p>
+      &copy; 2025 Таксопарк "Быстрый".
+      <strong>Б9123-09.03.04/4 Дмитриенко В.Ю.</strong>
+    </p>
+
+    <p>
+      <a href="#top">Наверх</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>

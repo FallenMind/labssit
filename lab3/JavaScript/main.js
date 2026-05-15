@@ -14,13 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
         errorEl.classList.add("hidden");
         dataForm.max.parentElement.classList.remove("error-input");
         dataForm.min.parentElement.classList.remove("error-input");
-
         // проверка
         if (!isMax && !isMin) {
             errorEl.classList.remove("hidden");
             dataForm.max.parentElement.classList.add("error-input");
             dataForm.min.parentElement.classList.add("error-input");
-            return;
         }
 
         drawGraph(buildings, dataForm);
